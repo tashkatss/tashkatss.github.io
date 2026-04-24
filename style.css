@@ -1,3 +1,7 @@
 body {
     background-color: rgba(81, 164, 81, 0.607);
 }
+
+h1 {
+    font-family: "ocr-a-std"
+}
