@@ -2,6 +2,19 @@ body {
     background-color: rgba(81, 164, 81, 0.607);
 }
 
+div.title {
+    font-family: "ocr-a-std";
+    font-size: 100px;
+    text-align: center
+}
+
+div.contents {
+    font-family:"Franklin Gothic Medium";
+    font-size: 20px;
+    text-align:left
+}
+
+
 h1 {
     font-family: "ocr-a-std"
 }
