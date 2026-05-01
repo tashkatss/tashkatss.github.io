@@ -2,19 +2,60 @@ body {
     background-color: rgba(81, 164, 81, 0.607);
 }
 
+img {
+    width:100%;
+    display:block;
+}
+
 div.title {
     font-family: "ocr-a-std";
     font-size: 100px;
-    text-align: center
+    text-align: left;
+    margin-left: 300px
 }
 
 div.contents {
-    font-family:"Franklin Gothic Medium";
+    font-family:"Franklin Gothic Light";
     font-size: 20px;
-    text-align:left
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 300px
 }
 
+div.text {
+    font-family: "ocr-a-std";
+    font-size: 10px;
+    text-align: left;
+    margin-left: 300px
+}
 
-h1 {
-    font-family: "ocr-a-std"
+div.container {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+div.item {
+    width:500px;
+    background-color: rgb(244, 230, 72);
+    color: white;
+}
+
+div.width25 {
+    width:25%;
+}
+
+div.width75 {
+    width:75%;
+}
+
+div.width50 {
+    width:50%;
+}
+
+div.width33 {
+    width:33.333%
+}
+
+div.width22 {
+    width:22%
 }
