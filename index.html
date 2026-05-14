@@ -1,8 +1,9 @@
-<html>
+<!-- <html> 
     <head>
         <link rel="stylesheet" href="https://use.typekit.net/zdc2aoo.css">
         <link rel="stylesheet" href="style.css">
     </head>
+    
     <body>
 
 
@@ -38,3 +39,436 @@
 
     </body>
 <html>
+ -->
+
+
+<!-- FIRST ATTEMPT -->
+
+<!--  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arecibo Message</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: #050505;
+      color: #eaeaea;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Background star effect */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 4px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    p.subtitle {
+      opacity: 0.7;
+      margin-top: 1rem;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    section {
+      padding: 120px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin-top: 40px;
+    }
+
+    .cell {
+      width: 100%;
+      padding-top: 100%;
+      position: relative;
+      background: #111;
+      border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .cell.active {
+      background: #00ffcc;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .cell:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0.5;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<header>
+  <h1>ARECIBO MESSAGE</h1>
+  <p class="subtitle">A signal sent into the cosmos in 1974</p>
+</header>
+
+<section>
+  <h2>What is it?</h2>
+  <p>
+    The Arecibo message was a binary-coded radio message sent from Earth to a globular cluster.
+    It represents humanity, our DNA, and our place in the solar system.
+  </p>
+</section>
+
+<section>
+  <h2>Binary Visualization</h2>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>
+  <p>Designed in the spirit of minimal cosmic communication</p>
+</footer>
+
+<script>
+  // Starfield effect
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let stars = [];
+
+  for (let i = 0; i < 200; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5
+    });
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+
+    stars.forEach(s => {
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    requestAnimationFrame(drawStars);
+  }
+
+  drawStars();
+
+  // Arecibo binary grid (simplified demo)
+  const grid = document.getElementById('grid');
+  const pattern = Array(200).fill(0).map(() => Math.random() > 0.7 ? 1 : 0);
+
+  pattern.forEach(bit => {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    if (bit === 1) cell.classList.add('active');
+    grid.appendChild(cell);
+  });
+
+  // Resize fix
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Message Received</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+h1,h2{
+  font-family:'OCR A Std','Space Mono',monospace;
+  text-transform:uppercase;
+  letter-spacing:3px;
+}
+
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  padding:120px 0;
+  border-bottom:1px solid #111;
+}
+
+.text-block p{
+  opacity:0.7;
+  margin-top:20px;
+  line-height:1.6;
+}
+
+.binary-line{
+  display:grid;
+  grid-template-columns:repeat(30,10px);
+  gap:4px;
+  margin:20px 0;
+}
+
+.bit{
+  width:10px;
+  height:10px;
+  background:#111;
+}
+
+.bit.active{background:#fff}
+
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(40,1fr);
+  gap:2px;
+}
+
+.pixel{
+  width:100%;
+  padding-top:100%;
+  background:#111;
+  opacity:0;
+}
+
+.pixel.on{background:#fff}
+.pixel.mid{background:#aaa}
+.pixel.low{background:#555}
+
+/* HERO TITLE BLOCK REVEAL */
+.title-grid{
+  display:grid;
+  grid-template-columns:repeat(20,20px);
+  gap:4px;
+  justify-content:center;
+  margin-top:100px;
+}
+
+.title-cell{
+  width:20px;
+  height:20px;
+  background:#111;
+  transition:0.3s;
+}
+
+.title-cell.reveal{
+  background:#fff;
+}
+
+.center{text-align:center}
+
+</style>
+</head>
+
+<body>
+<canvas id="stars"></canvas>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="center">
+  <div class="title-grid" id="titleGrid"></div>
+  <h1 style="margin-top:40px">THE MESSAGE RECEIVED</h1>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="text-block">
+    <h2>01 Who made it?</h2>
+    <div class="binary-line" id="line1"></div>
+    <p>We are a product of curiosity and wonder. This message was created by humanity seeking to reach beyond our world.</p>
+  </div>
+  <div class="image-grid" id="img1"></div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+  <div class="text-block">
+    <h2>02 Searching for connection?</h2>
+    <div class="binary-line" id="line2"></div>
+    <p>We sent our voice into the cosmos hoping that somewhere, something, would hear.</p>
+  </div>
+  <div class="image-grid" id="img2"></div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+  <div class="text-block">
+    <h2>03 The Observatory</h2>
+    <div class="binary-line" id="line3"></div>
+    <p>From Arecibo, we looked up. A beacon on Earth, listening and reaching outward.</p>
+  </div>
+  <div class="image-grid" id="img3"></div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+  <div class="text-block">
+    <h2>04 What else are we capable of?</h2>
+    <div class="binary-line" id="line4"></div>
+    <p>Technology evolves. So does our potential. The future holds questions we have yet to imagine.</p>
+  </div>
+  <div class="image-grid" id="img4"></div>
+</div>
+
+<!-- FINAL -->
+<div class="section">
+  <div class="text-block">
+    <h2>05 The Message Received</h2>
+    <p>Our message was heard. This is the response — received here on Earth.</p>
+  </div>
+  <div class="image-grid" id="final"></div>
+</div>
+
+</div>
+
+<script>
+// STARFIELD
+const canvas=document.getElementById('stars');
+const ctx=canvas.getContext('2d');
+canvas.width=innerWidth;canvas.height=innerHeight;
+let stars=[...Array(200)].map(()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*1.5}))
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#fff';stars.forEach(s=>{ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
+draw();
+
+// BINARY LINES
+function makeLine(id){
+  const el=document.getElementById(id);
+  for(let i=0;i<30;i++){
+    const d=document.createElement('div');
+    d.className='bit';
+    if(Math.random()>0.7)d.classList.add('active');
+    el.appendChild(d);
+  }
+}
+['line1','line2','line3','line4'].forEach(makeLine);
+
+// IMAGE GRID (PLACEHOLDER RANDOM)
+function makeGrid(id,count=1600){
+  const el=document.getElementById(id);
+  let cells=[];
+  for(let i=0;i<count;i++){
+    const d=document.createElement('div');
+    d.className='pixel';
+    if(Math.random()>0.85)d.classList.add('on');
+    el.appendChild(d);
+    cells.push(d);
+  }
+  return cells;
+}
+
+const grids=['img1','img2','img3','img4'].map(id=>makeGrid(id));
+
+// DECODE ANIMATION
+function decode(cells){
+  cells.forEach((c,i)=>{
+    setTimeout(()=>{c.style.opacity=1},i*5);
+  });
+}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const pixels=e.target.querySelectorAll('.pixel');
+      decode(pixels);
+      observer.unobserve(e.target);
+    }
+  })
+},{threshold:0.3});
+
+document.querySelectorAll('.image-grid').forEach(g=>observer.observe(g));
+
+// TITLE BLOCK REVEAL
+const titleGrid=document.getElementById('titleGrid');
+let titleCells=[];
+for(let i=0;i<200;i++){
+  const c=document.createElement('div');
+  c.className='title-cell';
+  titleGrid.appendChild(c);
+  titleCells.push(c);
+}
+
+setTimeout(()=>{
+  titleCells.forEach((c,i)=>{
+    setTimeout(()=>c.classList.add('reveal'),i*10);
+  });
+},500);
+
+</script>
+
+</body>
+</html>
