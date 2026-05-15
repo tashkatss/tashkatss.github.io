@@ -42,188 +42,7 @@
  -->
 
 
-<!-- FIRST ATTEMPT -->
-
-<!--  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arecibo Message</title>
-
-  
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Space Mono', monospace;
-      background: #050505;
-      color: #eaeaea;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Background star effect */
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 4px;
-      animation: fadeIn 2s ease forwards;
-    }
-
-    p.subtitle {
-      opacity: 0.7;
-      margin-top: 1rem;
-      animation: fadeIn 3s ease forwards;
-    }
-
-    section {
-      padding: 120px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 8px;
-      margin-top: 40px;
-    }
-
-    .cell {
-      width: 100%;
-      padding-top: 100%;
-      position: relative;
-      background: #111;
-      border: 1px solid #222;
-      transition: 0.3s;
-    }
-
-    .cell.active {
-      background: #00ffcc;
-      box-shadow: 0 0 10px #00ffcc;
-    }
-
-    .cell:hover {
-      transform: scale(1.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px;
-      opacity: 0.5;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-
-<body>
-
-<canvas id="stars"></canvas>
-
-<header>
-  <h1>ARECIBO MESSAGE</h1>
-  <p class="subtitle">A signal sent into the cosmos in 1974</p>
-</header>
-
-<section>
-  <h2>What is it?</h2>
-  <p>
-    The Arecibo message was a binary-coded radio message sent from Earth to a globular cluster.
-    It represents humanity, our DNA, and our place in the solar system.
-  </p>
-</section>
-
-<section>
-  <h2>Binary Visualization</h2>
-  <div class="grid" id="grid"></div>
-</section>
-
-<footer>
-  <p>Designed in the spirit of minimal cosmic communication</p>
-</footer>
-
-<script>
-  // Starfield effect
-  const canvas = document.getElementById('stars');
-  const ctx = canvas.getContext('2d');
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let stars = [];
-
-  for (let i = 0; i < 200; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.5
-    });
-  }
-
-  function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'white';
-
-    stars.forEach(s => {
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    requestAnimationFrame(drawStars);
-  }
-
-  drawStars();
-
-  // Arecibo binary grid (simplified demo)
-  const grid = document.getElementById('grid');
-  const pattern = Array(200).fill(0).map(() => Math.random() > 0.7 ? 1 : 0);
-
-  pattern.forEach(bit => {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    if (bit === 1) cell.classList.add('active');
-    grid.appendChild(cell);
-  });
-
-  // Resize fix
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-</script>
-
-</body>
-</html>
--->
+<!-- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -245,7 +64,7 @@ body{
 }
 
 h1,h2{
-  font-family:'OCR A Std','Space Mono',monospace;
+  font-family:'ocr-a-std','Space Mono',monospace;
   text-transform:uppercase;
   letter-spacing:3px;
 }
@@ -339,13 +158,13 @@ canvas{
 
 <div class="container">
 
-<!-- HERO -->
+// HERO 
 <div class="center">
   <div class="title-grid" id="titleGrid"></div>
   <h1 style="margin-top:40px">THE MESSAGE RECEIVED</h1>
 </div>
 
-<!-- SECTION 1 -->
+// SECTION 1 
 <div class="section">
   <div class="text-block">
     <h2>01 Who made it?</h2>
@@ -355,7 +174,7 @@ canvas{
   <div class="image-grid" id="img1"></div>
 </div>
 
-<!-- SECTION 2 -->
+// SECTION 2 
 <div class="section">
   <div class="text-block">
     <h2>02 Searching for connection?</h2>
@@ -365,7 +184,7 @@ canvas{
   <div class="image-grid" id="img2"></div>
 </div>
 
-<!-- SECTION 3 -->
+// SECTION 3 
 <div class="section">
   <div class="text-block">
     <h2>03 The Observatory</h2>
@@ -375,7 +194,7 @@ canvas{
   <div class="image-grid" id="img3"></div>
 </div>
 
-<!-- SECTION 4 -->
+// SECTION 4 
 <div class="section">
   <div class="text-block">
     <h2>04 What else are we capable of?</h2>
@@ -385,7 +204,7 @@ canvas{
   <div class="image-grid" id="img4"></div>
 </div>
 
-<!-- FINAL -->
+// FINAL 
 <div class="section">
   <div class="text-block">
     <h2>05 The Message Received</h2>
@@ -469,6 +288,252 @@ setTimeout(()=>{
 },500);
 
 </script>
+
+</body>
+</html>
+-->
+
+<html> 
+<head>
+    <link rel="stylesheet" href="https://use.typekit.net/zdc2aoo.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<script>
+// Binary lines
+document.querySelectorAll('.binary-line').forEach(line => {
+    for (let i = 0; i < 30; i++) {
+        const bit = document.createElement('div');
+        if (Math.random() > 0.7) bit.classList.add('on');
+        line.appendChild(bit);
+    }
+});
+
+// Render binary image
+function renderBinaryImage(containerId, data) {
+    const container = document.getElementById(containerId);
+
+    data.forEach(row => {
+        row.forEach(val => {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            if (val === 1) pixel.classList.add('on');
+            container.appendChild(pixel);
+        });
+    });
+}
+
+// Your final image data (paste full array here)
+const finalData = [/* your full array */];
+
+renderBinaryImage('final', finalData);
+
+// Decode animation
+function decodeGrid(container) {
+    const pixels = [...container.children];
+    pixels.forEach((p, i) => {
+        setTimeout(() => {
+            p.style.opacity = 1;
+        }, i * 15);
+    });
+}
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            decodeGrid(e.target);
+            observer.unobserve(e.target);
+        }
+    });
+});
+
+observer.observe(document.getElementById('final'));
+</script>
+
+
+<body>
+
+<!-- add star background :))) -->
+<canvas id="stars"></canvas>
+
+
+<script>
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+let stars = Array.from({length: 150}, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.2
+}));
+
+function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+
+    stars.forEach(s => {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    requestAnimationFrame(drawStars);
+}
+
+drawStars();
+</script>
+
+
+<!-- TITLE -->
+<!-- <div class="title">THE ARECIBO MESSAGE</div> -->
+
+<div class="title" id="mainTitle"></div>
+
+
+<!-- CONTENTS -->
+<div class="contents">
+    01 — WHO MADE IT <br>
+    02 — SEARCHING FOR CONNECTION <br>
+    03 — THE OBSERVATORY <br>
+    04 — WHAT ELSE ARE WE CAPABLE OF <br>
+    05 — THE MESSAGE RECEIVED
+</div>
+
+<!-- INTRO TEXT -->
+<div class="text">
+    We sent a signal into space hoping for a reply. 
+    Instead, we built the reply ourselves — from data, language, and systems of our own making.
+</div>
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+<!-- SECTION 1 -->
+<div class="container intro">
+    <div class="item width50">
+        <div class="section-title">01 WHO MADE IT</div>
+        <div class="binary-line"></div>
+    </div>
+    
+    <div class="image-wrapper">
+
+    <!-- YOUR IMAGE GOES HERE -->
+    <div class="image-grid" id="img1"></div>
+
+    <!-- OPTIONAL LABEL -->
+    <div class="data-label top-left">OBSERVATORY</div>
+
+</div>
+
+</div>
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="container intro">
+    <div class="item width50">
+        <div class="section-title">02 SEARCHING FOR CONNECTION</div>
+        <div class="binary-line"></div>
+    </div>
+    <div class="item width50 image-grid" id="img2"></div>
+</div>
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="container intro">
+    <div class="item width50">
+        <div class="section-title">03 THE OBSERVATORY</div>
+        <div class="binary-line"></div>
+    </div>
+    <div class="item width50 image-grid" id="final"></div>
+</div>
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+
+<!-- SECTION 4 -->
+<div class="container intro">
+    <div class="item width50">
+        <div class="section-title">04 WHAT ELSE ARE WE CAPABLE OF?</div>
+        <div class="binary-line"></div>
+    </div>
+    <div class="item width50 image-grid" id="final"></div>
+</div>
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+<!-- FINAL SECTION -->
+<div class="container intro">
+    <div class="item width50">
+        <div class="section-title">05 THE MESSAGE RECEIVED</div>
+        <div class="binary-line"></div>
+    </div>
+    <div class="item width50 image-grid" id="final"></div>
+</div>
+
+
+
+<div class="image-wrapper">
+    <div class="scan-line"></div>
+    <div class="image-grid" id="img1"></div>
+</div>
+
+<div class="data-label top-left">TRANSMISSION SOURCE</div>
+<div class="data-label bottom-right">SIGNAL ID: 1974-AR</div>
+
+<div class="glyph-caption">
+Searching for Connection?
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const text = "THE ARECIBO MESSAGE";
+    const titleEl = document.getElementById("mainTitle");
+
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            titleEl.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 80);
+        }
+    }
+
+    typeWriter();
+
+});
+</script>
+
 
 </body>
 </html>
